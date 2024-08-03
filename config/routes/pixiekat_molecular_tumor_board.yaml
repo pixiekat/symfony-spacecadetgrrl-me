@@ -1,0 +1,3 @@
+pixiekat_molecular_tumor_board.routes:
+  resource: '@PixiekatMolecularTumorBoard/config/routes.yaml'
+  prefix: /molecular-tumor-board

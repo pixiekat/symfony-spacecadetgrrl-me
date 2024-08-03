@@ -1,0 +1,3 @@
+alicanto_learning_routes:
+  resource: '@PixiekatAlicantoLearning/config/routes.yaml'
+  prefix: /lms
