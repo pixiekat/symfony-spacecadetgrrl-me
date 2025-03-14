@@ -1,0 +1,11 @@
+<div class="form--contact">
+  <h2 class="chelsea-market-open">Contact Us</h2>
+  <div class="form--contact__message">
+    <p>Have a question or need help? Contact us using the form below.</p>
+    {% if form is defined %}
+      {{ form_start(form, {'action': '/contact' }) }}
+        {{ form(form) }}
+      {{ form_end(form) }}
+    {% endif %}
+  </div>
+</div>

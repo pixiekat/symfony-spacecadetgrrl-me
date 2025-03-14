@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+  <div class="form--contact">
+    <h2 class="chelsea-market-open">here's the mail it never fails</h2>
+    <div class="form--contact__message">
+      <p>Send me love letters, cookies, and kind words ♡</p>
+      {% if form is defined %}
+        {{ form_start(form) }}
+          {{ form(form) }}
+        {{ form_end(form) }}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

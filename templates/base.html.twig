@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+    {% block stylesheets %}
+      <link href="https://fonts.googleapis.com/css?family=VT323|Montserrat|Give+You+Glory" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://use.typekit.net/zpi6wvn.css">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row region--header">
+        <div class="col-12">
+          <div class="row my-4 py-3">
+            {% for notice in app.flashes('notice') %}
+              <div class="alert alert-primary">
+                {{ notice }}
+              </div>
+            {% endfor %}
+            {% for status in app.flashes('status') %}
+              <div class="alert alert-info">
+                {{ status }}
+              </div>
+            {% endfor %}
+            {% for error in app.flashes('error') %}
+              <div class="alert alert-danger">
+                {{ error }}
+              </div>
+            {% endfor %}
+            {% for success in app.flashes('success') %}
+              <div class="alert alert-success">
+                {{ success }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row" role="content">
+        <div class="region--sidebar order-1 col-12 col-md-3">
+          <h2 class="chelsea-market-open">about me</h2>
+          <p>dreamer, nerdy girl, ttrpg addict, dragon wrangler, avoider of sunlight. i love d&amp;d, ttrpgs, cosplaying, renn faires, and <a href="https://archiveofourown.org/tags/Laudna*s*Imogen%20Temult/works" rel="external">imodna</a></p>
+
+          <h2 class="chelsea-market-open">informative</h2>
+          <ul class="list list--unstyled">
+            <li class="list-item"><a href="{{ url('app_homepage') }}">home</a></li>
+            <li class="list-item"><a href="{{ url('app_domain_info') }}">domain info</a></li>
+            <li class="list-item">questions</li>
+            <li class="list-item">askbox</li>
+            <li class="list-item">me :)</li>
+          </ul>
+
+          <h2 class="chelsea-market-open">contact</h2>
+          <ul class="list list--unstyled">
+            <li class="list-item"><a href="{{ url('app_contact') }}">contact</a></li>
+          </ul>
+          {% block sidebar %}
+            {# render(controller(
+              'App\\Controller\\HomepageController::contact', {}
+            )) #}
+          {% endblock %}
+        </div>
+        <div class="region--content order-0 col-12 col-md-9">
+          <div class="container-fluid">
+            <div class="row main-content" role="main">
+              {% block body %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="row">
+        <div class="col offset-lg-2x offset-md-2x text-center">
+          <p>made with <i class="fas fa-heart"></i> using <a href="https://www.sublimetext.com/" rel="external">sublime text</a> & <a href="https://www.firefox.com" rel="external">firefox</a>.</p>
+          <p>💚 <a href="https://free-palestine.carrd.co/" rel="external">free palestine</a> (<a href="https://bdsmovement.net/" rel="external">and how to help</a>) 🩷</p>
+          <!--<ul class="list-inline browsers">
+            <li class="list-inline-item"><a href="https://www.google.com/chrome" rel="external"><i class="fab fa-chrome"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.firefox.com" rel="external"><i class="fab fa-firefox"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.microsoftedgeinsider.com/en-gb/" rel="external"><i class="fab fa-edge"></i></a></li>
+          </ul>-->
+        </div>
+      </footer>
+    </div>
+    {% block javascripts %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://kit.fontawesome.com/b9fd5a82bc.js"></script>
+      {% block importmap %}{{ importmap('app') }}{% endblock %}
+      <script>
+
+// Check for JavaScript and set a hidden input
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+  //document.getElementsByClassName('javascript--enabled')[0].value = '1';
+}
+
+{#
+$(document).ready(function() {
+    $('form[name="contact_form"] #contact_form_submit').click(function(event) {
+      return;
+        event.preventDefault(); // Prevent default form submission
+
+        var formData = $('form[name="contact_form"]').serialize(); // Serialize form data
+
+        $.ajax({
+            url: '/contact', // Replace with your route
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                // Handle successful response
+                console.dir(response);
+                if (response.success) {
+                    $('.region--sidebar .form--contact .form--contact__message').html(response.message); // Replace sidebar content
+                } else {
+                    // Handle error
+                    console.log(response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error
+                console.log(xhr.responseText);
+                console.log(status);
+                console.log(error);
+            }
+        });
+    });
+});
+#}
+      </script>
+    {% endblock %}
+    {% if app.environment == 'prod' %}
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVLYZ5CY5Y"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WVLYZ5CY5Y');
+      </script>
+    {% endif %}
+  </body>
+</html>
+
+{# dump(lastfm)#}

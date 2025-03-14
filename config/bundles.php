@@ -16,4 +16,5 @@ return [
     Pixiekat\AlicantoConsult\PixiekatAlicantoConsult::class => ['all' => true],
     Pixiekat\AlicantoLearning\PixiekatAlicantoLearning::class => ['all' => true],
     Symfonycasts\SassBundle\SymfonycastsSassBundle::class => ['all' => true],
+    Karser\Recaptcha3Bundle\KarserRecaptcha3Bundle::class => ['all' => true],
 ];

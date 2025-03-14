@@ -1,0 +1,91 @@
+@mixin form-button {
+  background: var(--palette-suicidegirls);
+  border: 1px solid var(--palette-black);
+  border-radius: 0;
+  color: var(--palette-black);
+
+  &:hover, &:focus, &:active {
+    background: var(--palette-black);
+    border: 1px solid var(--palette-suicidegirls);
+    color: var(--palette-suicidegirls);
+  }
+}
+
+body {
+  background: var(--palette-black);
+  color: var(--palette-emogirl);
+  font-family: var(--base-font);
+  font-size: var(--base-font-size); //quiche-sans, sans-serif;
+  font-weight: 400;
+  margin-top: 60px;
+}
+
+a {
+  color: var(--palette-suicidegirls);
+  cursor: crosshair;
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--palette-suicidegirls);
+    color: var(--palette-woolwhite);
+    text-decoration: line-through;
+  }
+}
+
+.list-group-flush {
+  .list-group-item {
+    background: rgba(84,38,56, 0.1);
+  }
+}
+
+ul.browsers i {
+  color: #8F244D;
+  font-size: 1.5em;
+}
+ul.browsers a {
+  color: var(--palette-suicidegirls);
+  text-decoration: none;
+}
+ul.browsers a:hover {
+  background-color: unset;
+  text-decoration: none;
+}
+ul.browsers a:hover i {
+  color: var(--palette-woolwhite);
+}
+i.fa-heart {
+  color: var(--palette-emogirl);
+}
+
+form {
+
+  input.form-control,
+  textarea.form-control {
+    background: var(--palette-black);
+    border: 1px dashed var(--palette-suicidegirls);
+    color: 1px dashed var(--palette-suicidegirls);
+    padding: 10px;
+
+    &:focus {
+      background: var(--palette-black);
+      border: 1px dashed var(--palette-suicidegirls);
+      box-shadow: unset;
+      color: 1px dashed var(--palette-suicidegirls);
+      padding: 10px;
+    }
+  }
+
+  button {
+    &[type="submit"] {
+      @include form-button;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active {
+      @include form-button;
+    }
+  }
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  @include form-button;
+}

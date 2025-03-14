@@ -1,0 +1,94 @@
+:root {
+  --font-family-vt323: 'VT323', monospace;
+  --font-family-monterrat: 'Montserrat', sans-serif;
+  --font-family-kalnia-glaze: 'KalniaGlaze', serif;
+  --font-family-radley: 'Radley', serif;
+  --font-family-tangerine: 'Tangerine', cursive;
+  --font-family-zeyada: 'Zeyada', cursive;
+  --font-family-give-you-glory: 'Give You Glory', cursive;
+  --font-family-kanit: 'Kanit', sans-serif;
+  --font-family-chelsea-market-open: 'chelsea-market-open', cursive;
+  --font-family-monospace: var(--font-family-vt323);
+
+  --palette-all-the-pretty-girls: rgb(241,216,189);
+  --palette-just-carry-it-on: rgb(254,174,64);
+  --palette-just-avalanche-rock: rgb(91,191,157);
+  --palette-just-Hemphasis: rgb(215,43,39);
+  --palette-BCB77B: rgb(188,183,123);
+  
+  --palette-suicidegirls: rgb(236,44,145);
+  --palette-emogirl: rgb(222,129,171);
+  --palette-tattooedgirl: rgb(218,129,171);
+  --palette-black: rgb(0,0,0);
+  --palette-woolwhite: rgb(232,232,232);
+
+
+  --font-family-serif: NotoColorEmoji, var(--font-family-radley), Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-sans-serif: NotoColorEmoji,-apple-system,BlinkMacSystemFont,var(--font-family-monterrat),"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,var(--font-family-vt323),"Liberation Mono","Courier New",monospace;
+
+  --base-font-size: 1.8rem;
+  --base-font-weight: 400;
+  --base-font: var(--font-family-serif);
+
+  --theme-background-color: var(--palette-all-the-pretty-girls);
+  --theme-link-color: var(--palette-just-Hemphasis);
+  --theme-link-hover-color: var(--palette-just-avalanche-rock);
+}
+
+@font-face {
+  font-family: KalniaGlaze;
+  font-weight: 400;
+  src: url('/fonts/KalniaGlaze-Regular.ttf');
+}
+@font-face {
+  font-family: KalniaGlaze;
+  font-weight: 700;
+  src: url('/fonts/KalniaGlaze-Bold.ttf');
+}
+@font-face {
+  font-family: KalniaGlaze;
+  font-weight: 100;
+  src: url('/fonts/KalniaGlaze-Thin.ttf');
+}
+@font-face {
+  font-family: Tangerine;
+  font-weight: 400;
+  src: url('/fonts/Tangerine-Regular.ttf');
+}
+@font-face {
+  font-family: Tangerine;
+  font-weight: 700;
+  src: url('/fonts/Tangerine-Bold.ttf');
+}
+@font-face {
+  font-family: Zeyada;
+  font-weight: 400;
+  src: url('/fonts/Zeyada-Regular.ttf');
+}
+@font-face {
+  font-family: Radley;
+  font-weight: 400;
+  src: url('/fonts/Radley-Regular.ttf');
+}
+@font-face {
+  font-family: Radley;
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/Radley-Italic.ttf');
+}
+.chelsea-market-open {
+  font-family: chelsea-market-open, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.quiche-sans-thin {
+  font-family: quiche-sans, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.quiche-sans {
+  font-family: quiche-sans, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}

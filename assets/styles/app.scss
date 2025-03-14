@@ -1,0 +1,13 @@
+@import './root.scss';
+//@import './app-v2.scss';
+
+* {
+  text-transform: lowercase;
+}
+
+.list {
+  &.list--unstyled {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
